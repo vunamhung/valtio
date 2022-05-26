@@ -60,13 +60,13 @@ function createESMConfig(input, output) {
     plugins: [
       alias({
         entries: {
-          './vanilla': 'valtio/vanilla',
-          '../vanilla': 'valtio/vanilla',
+          './vanilla': '@vunamhung/valtio/vanilla',
+          '../vanilla': '@vunamhung/valtio/vanilla',
         },
       }),
       resolve({ extensions }),
       replace({
-        __DEV__: '(import.meta.env&&import.meta.env.MODE)!=="production"',
+        __DEV__: 'false',
         // a workround for #410
         'use-sync-external-store/shim': 'use-sync-external-store/shim/index.js',
         delimiters: ['\\b', '\\b(?!(\\.|/))'],
@@ -85,8 +85,8 @@ function createCommonJSConfig(input, output) {
     plugins: [
       alias({
         entries: {
-          './vanilla': 'valtio/vanilla',
-          '../vanilla': 'valtio/vanilla',
+          './vanilla': '@vunamhung/valtio/vanilla',
+          '../vanilla': '@vunamhung/valtio/vanilla',
         },
       }),
       resolve({ extensions }),
@@ -113,15 +113,15 @@ function createUMDConfig(input, output, env) {
           : `valtio${c.slice(0, 1).toUpperCase()}${c.slice(1)}`,
       globals: {
         react: 'React',
-        'valtio/vanilla': 'valtioVanilla',
+        '@vunamhung/valtio/vanilla': 'valtioVanilla',
       },
     },
     external,
     plugins: [
       alias({
         entries: {
-          './vanilla': 'valtio/vanilla',
-          '../vanilla': 'valtio/vanilla',
+          './vanilla': '@vunamhung/valtio/vanilla',
+          '../vanilla': '@vunamhung/valtio/vanilla',
         },
       }),
       resolve({ extensions }),
@@ -147,8 +147,8 @@ function createSystemConfig(input, output, env) {
     plugins: [
       alias({
         entries: {
-          './vanilla': 'valtio/vanilla',
-          '../vanilla': 'valtio/vanilla',
+          './vanilla': '@vunamhung/valtio/vanilla',
+          '../vanilla': '@vunamhung/valtio/vanilla',
         },
       }),
       resolve({ extensions }),

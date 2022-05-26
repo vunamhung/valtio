@@ -1,7 +1,6 @@
 {
-  "name": "valtio",
-  "private": true,
-  "version": "1.6.1",
+  "name": "@vunamhung/valtio",
+  "version": "1.6.5",
   "description": "💊 Valtio makes proxy-state simple for React and Vanilla",
   "main": "./index.js",
   "types": "./index.d.ts",
